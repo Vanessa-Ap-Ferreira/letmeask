@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../hooks/useAuth';
+import { database } from '../services/firebase';
 
 import illustrationImg from '../assets/illustration.svg';
 import logoImg from '../assets/logo.svg';
@@ -10,7 +11,6 @@ import googleImg from '../assets/google-icon.svg';
 import { Button } from '../components/Button';
 
 import '../styles/auth.scss';
-import { database } from '../services/firebase';
 
 export function Home() {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export function Home() {
     if(!user) {
       await singInWithGoogle()
     }  
-    navigate('/room/new')
+    navigate('/rooms/new')
   }
 
   async function handleJoinRoom(event: FormEvent) {

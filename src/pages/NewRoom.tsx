@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../hooks/useAuth';
+import { database } from '../services/firebase';
 
 import illustrationImg from '../assets/illustration.svg';
 import logoImg from '../assets/logo.svg';
@@ -9,7 +10,6 @@ import logoImg from '../assets/logo.svg';
 import { Button } from '../components/Button';
 
 import '../styles/auth.scss';
-import { database } from '../services/firebase';
 
 export function NewRoom() {
   const { user } = useAuth();
